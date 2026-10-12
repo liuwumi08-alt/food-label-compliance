@@ -1,14 +1,13 @@
 # 食品安全法规自查 · food-label-compliance
 
-一个基于 **《中华人民共和国食品安全法（修订草案征求意见稿）》** 与 **GB 7718—2025《预包装食品标签通则》** 的豆包办公（Doubao Work）技能，用于预包装食品标签/背标/包装的合规排查与设计。
+豆包办公（Doubao Work）**食品标签合规技能合集**，用于预包装食品标签/背标/包装的合规排查与设计。基于 **《中华人民共和国食品安全法（修订草案征求意见稿）》** 与 **GB 7718—2025《预包装食品标签通则》** 两套权威依据。
 
-**两种用法：**
-- **发图排查**：把背标/标签截图发来 → 逐项对照法律与国标排查 → 先给风险分级（高/中/低）→ 再给修改意见。
-- **模糊提问**：一句话提出包装设计/合规问题（生产日期怎么标、配料怎么写、能否写某声称等）→ 按条款排查 → 给出合规、可执行、可落地的方案。
+本仓库包含 **两个技能**，可按需选装：
 
-**双依据：**
-- 法律（食品安全法草案）：定底线与罚则（法定标示事项 74 条、真实性红线 78 条、罚则 152/153/184 条等）。
-- 国标（GB 7718—2025）：定技术细则（日期格式、配料递减、定量标示、致敏、面积豁免等）。
+| 技能 | 内容 | 适用场景 |
+|---|---|---|
+| `food-label-compliance` | **一体化合并技能**：法律（食品安全法）+ 国标（GB 7718—2025）双依据 | 发图排查背标 + 模糊提问，统一入口，推荐首选 |
+| `gb7718-food-label` | **GB 7718 技术问答专版** | 只想基于 GB 7718—2025 做标签技术自查/审核 |
 
 ---
 
@@ -16,51 +15,44 @@
 
 ```
 food-label-compliance/
-├── SKILL.md                      # 技能入口：统一排查与设计流程
+├── SKILL.md                      # 合并技能入口
 └── references/
     ├── food-safety-law.md        # 法律参考库：底线清单/红线/罚则/整改对照
     └── gb7718-2025.md            # 国标参考库：核心门槛/条款要点/违规点
+
+gb7718-food-label/
+├── SKILL.md                      # GB7718 专版技能入口
+└── references/
+    └── gb7718-2025.md            # 国标参考库
 ```
 
 ---
 
 ## 🚀 安装方法（豆包办公用户）
 
-> 豆包办公技能以文件夹形式存放在用户技能目录，安装只需把本技能文件夹放到正确位置。
+> 豆包办公技能以文件夹形式存放在用户技能目录，安装只需把对应技能文件夹放到正确位置。
 
 ### 方法 A：Git 克隆（推荐，可随时更新）
-
-打开终端，执行：
 
 ```bash
 # 1. 克隆仓库
 git clone https://github.com/liuwumi08-alt/food-label-compliance.git
 
-# 2. 把技能文件夹放入豆包办公用户技能目录
+# 2. 把技能文件夹放入豆包办公用户技能目录（按需选装）
 #    （路径以你的环境为准，一般为 <环境根>/workspace/.user_skills/）
 cp -r food-label-compliance/food-label-compliance <你的workspace>/.user_skills/
+# 或
+cp -r food-label-compliance/gb7718-food-label <你的workspace>/.user_skills/
 
 # 3. 重启/刷新豆包办公，技能即加载
 ```
 
 ### 方法 B：下载 ZIP 手动放置
 
-1. 打开仓库页 `https://github.com/liuwumi08-alt/food-label-compliance` → 点 **Code** → **Download ZIP**。
-2. 解压，取出 `food-label-compliance/` 文件夹。
-3. 放入你的用户技能目录：`<环境根>/workspace/.user_skills/food-label-compliance/`。
+1. 打开仓库页 → 点 **Code** → **Download ZIP**。
+2. 解压，取出需要的技能文件夹（`food-label-compliance/` 或 `gb7718-food-label/`）。
+3. 放入你的用户技能目录：`<环境根>/workspace/.user_skills/`。
 4. 重启/刷新豆包办公。
-
----
-
-## ✅ 安装校验
-
-在技能根目录执行（校验脚本以实际安装环境为准）：
-
-```bash
-python3 scripts/quick_validate.py food-label-compliance
-```
-
-输出 `Skill is valid!` 即安装正确。
 
 ---
 
